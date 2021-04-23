@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block title%}Asset Tracker{% endblock%}
+{% block body%}
+<center>
+   <div class="container-fluid bg-dark">
+      <a href="/">Back</a>
+   </div>
+   <br>
+   <div id="center">
+   <form action="/asset" method="POST">
+      <div class="form-group">
+        <label>Asset ID:</label>
+        <input type="text" class="form-control" name="id" id="id" placeholder="Type here...">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+</center>
+<br>
+<table class="table">
+   <thead class="table table-striped">
+     <tr>
+       <th scope="col">AssetID</th>
+       <th scope="col">Sender</th>
+       <th scope="col">Receiver</th>
+       <th scope="col">Block Index</th>
+       <th scope="col">Time</th>
+     </tr>
+   </thead>
+   <tbody>
+      {% for row in rows %}
+      <tr>
+         <td>{{row[0]}}</td>
+         <td>{{row[1]}}</td>
+         <td> {{row[2]}}</td>
+         <td><a href="/chain/{{row[3]}}">{{row[3]}}</a></td>	
+         <td> {{ row[4]}}</td> 
+      </tr>
+   {% endfor %}
+   </tbody>
+ </table>
+<br>
+{% endblock %}

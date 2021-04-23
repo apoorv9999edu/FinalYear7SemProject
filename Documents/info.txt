@@ -1,0 +1,33 @@
+/api/asset/"id"
+/api/vial/"id"
+
+/mine
+
+/chain
+/chain/"blocknumeber"
+
+/api/details/   ===   POST
+{
+    "id":"PID,DID,AID,VID",
+    "type":"p,d,a,v"
+}
+
+api/transaction/new
+{
+     "id": "A79",
+     "sender": "Indore",
+     "reciever": "Dewas",
+     "type": "a"
+}
+{
+     "id": "V79",
+     "sender": "Doctor",
+     "reciever": "Patient",
+     "type": "v"
+}
+
+
+import hashlib
+guess = f'{proof}{previous_hash}'.encode()
+guess_hash = hashlib.sha256(guess).hexdigest()
+print(guess_hash)
